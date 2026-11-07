@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vietjet - Bay Khắp Việt Nam & Khám Phá Thế Giới</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVBAR ================= -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="Images/vietjet-air.png" alt="Vietjet" class="logo-img" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
+        <div id="logoFallback" class="logo-fallback" style="display: none;">VIET<span>JET</span></div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Trang Chủ</a>
+        <a href="flights.html" class="nav-link">Chuyến Bay</a>
+        <a href="tours.html" class="nav-link">Tour Du Lịch</a>
+        <a href="cart.html" class="nav-link">Giỏ Hàng</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:19001886" class="hotline-btn">
+          <span>📞 Hotline:</span> 1900 1886
+        </a>
+        <a href="cart.html" class="cart-icon-btn" title="Xem giỏ hàng">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO & SEARCH WIDGET ================= -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Bay Đẳng Cấp, Trải Nghiệm Thăng Hoa</h1>
+        <p class="hero-subtitle">Đặt vé máy bay trực tuyến giá tốt nhất & Khám phá các tour du lịch trọn gói hấp dẫn cùng Vietjet</p>
+      </div>
+
+      <div class="search-widget-card">
+        <!-- Tab Chọn Khứ Hồi / Một Chiều -->
+        <div class="search-tabs">
+          <label class="tab-option active">
+            <input type="radio" name="tripType" value="roundtrip" checked>
+            <span>Vé Khứ Hồi</span>
+          </label>
+          <label class="tab-option">
+            <input type="radio" name="tripType" value="oneway">
+            <span>Vé Một Chiều</span>
+          </label>
+        </div>
+
+        <!-- Khối nhập liệu tìm kiếm -->
+        <form class="search-fields-grid" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="fromCity">🛫 Điểm Xuất Phát</label>
+            <select id="fromCity" class="form-control">
+              <option value="HAN">Hà Nội (HAN)</option>
+              <option value="SGN">TP. Hồ Chí Minh (SGN)</option>
+              <option value="DAD">Đà Nẵng (DAD)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="toCity">🛬 Điểm Đến</label>
+            <select id="toCity" class="form-control">
+              <option value="SGN">TP. Hồ Chí Minh (SGN)</option>
+              <option value="HAN">Hà Nội (HAN)</option>
+              <option value="DAD">Đà Nẵng (DAD)</option>
+              <option value="PQC">Phú Quốc (PQC)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="departDate">📅 Ngày Đi</label>
+            <input type="date" id="departDate" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="returnDate">📅 Ngày Về</label>
+            <input type="date" id="returnDate" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="passengerCount">👤 Hành Khách</label>
+            <select id="passengerCount" class="form-control">
+              <option value="1">1 Người lớn</option>
+              <option value="2">2 Người lớn</option>
+              <option value="3">3 Người lớn</option>
+              <option value="4">4+ Gia đình</option>
+            </select>
+          </div>
+
+          <button id="btnSearchFlights" class="btn btn-primary" type="button" style="height: 48px;">
+            🔍 Tìm Kiếm
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8 TOUR DU LỊCH NỔI BẬT ================= -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Khám Phá Điểm Đến Tuyệt Vời</span>
+          <h2 class="section-title">8 Tour Du Lịch <span>Nổi Bật Nhất</span></h2>
+        </div>
+        <a href="tours.html" class="btn btn-outline-primary btn-sm">Xem Tất Cả Tour →</a>
+      </div>
+
+      <!-- Lưới 8 Tour du lịch (Tải từ SQLite, thumbnail chuẩn 600x400) -->
+      <div id="featuredToursList" class="tours-grid">
+        <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
+          Đang nạp dữ liệu tour từ SQLite...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ĐỐI TÁC HÀNG KHÔNG ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Mạng Lưới Đường Bay Toàn Cầu</span>
+          <h2 class="section-title">Các Hãng Hàng Không <span>Đồng Hành</span></h2>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px;">Bấm vào từng hãng bay để xem các chuyến bay tương ứng</p>
+      </div>
+
+      <!-- Lưới logo các hãng hàng không (Click dẫn sang flights.html) -->
+      <div id="airlinesList" class="airlines-grid">
+        <div style="grid-column: 1/-1; text-align: center; padding: 20px; color: var(--text-muted);">
+          Đang tải đối tác hàng không từ SQLite...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="color: var(--accent); font-size: 22px;">VIETJET TRAVEL</h4>
+          <p style="margin-top: 14px; line-height: 1.8;">Website đặt vé máy bay và tour du lịch trực tuyến hàng đầu. Trải nghiệm dịch vụ chuyên nghiệp, an toàn, tiết kiệm chi phí tối đa.</p>
+          <p style="margin-top: 12px; font-weight: 700; color: #ffffff;">Tổng đài 24/7: <span style="color: var(--accent);">1900 1886</span></p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Về Chúng Tôi</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Giới thiệu Vietjet</a></li>
+            <li><a href="flights.html">Mạng lưới đường bay</a></li>
+            <li><a href="tours.html">Các gói tour du lịch</a></li>
+            <li><a href="cart.html">Kiểm tra đơn hàng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Chính Sách</h4>
+          <ul class="footer-links">
+            <li><a href="#">Điều kiện vận chuyển</a></li>
+            <li><a href="#">Quy định hành lý</a></li>
+            <li><a href="#">Chính sách hoàn hủy</a></li>
+            <li><a href="#">Bảo mật thông tin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Thanh Toán An Toàn</h4>
+          <p style="font-size: 14px; margin-bottom: 12px;">Hỗ trợ thanh toán bảo mật đa kênh:</p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span style="background: #1e293b; padding: 6px 12px; border-radius: 4px; font-size: 12px; color: #fff;">VietQR</span>
+            <span style="background: #1e293b; padding: 6px 12px; border-radius: 4px; font-size: 12px; color: #fff;">ATM Nội Địa</span>
+            <span style="background: #1e293b; padding: 6px 12px; border-radius: 4px; font-size: 12px; color: #fff;">Visa / Master</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Vietjet Travel. Nền tảng du lịch trực tuyến. Nền trắng sáng & Màu chủ đạo đỏ #ee1d23.</div>
+        <div>Cơ sở dữ liệu: SQLite WebAssembly (sql.js)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SQLite WebAssembly CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <!-- App Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

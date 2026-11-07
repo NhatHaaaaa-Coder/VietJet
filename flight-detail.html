@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Chuyến Bay - Vietjet Travel</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVBAR ================= -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="Images/vietjet-air.png" alt="Vietjet" class="logo-img" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
+        <div id="logoFallback" class="logo-fallback" style="display: none;">VIET<span>JET</span></div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Trang Chủ</a>
+        <a href="flights.html" class="nav-link active">Chuyến Bay</a>
+        <a href="tours.html" class="nav-link">Tour Du Lịch</a>
+        <a href="cart.html" class="nav-link">Giỏ Hàng</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:19001886" class="hotline-btn">
+          <span>📞 Hotline:</span> 1900 1886
+        </a>
+        <a href="cart.html" class="cart-icon-btn" title="Xem giỏ hàng">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMB ================= -->
+  <div style="background-color: var(--bg-surface); border-bottom: 1px solid var(--border-light); padding: 16px 0;">
+    <div class="container" style="font-size: 14px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+      <a href="index.html" style="color: var(--text-main);">Trang Chủ</a>
+      <span>/</span>
+      <a href="flights.html" style="color: var(--text-main);">Chuyến Bay</a>
+      <span>/</span>
+      <span style="color: var(--primary); font-weight: 600;">Chi Tiết Chuyến Bay & Chọn Hạng Vé</span>
+    </div>
+  </div>
+
+  <!-- ================= CHI TIẾT CHUYẾN BAY ================= -->
+  <main class="container" style="padding: 40px 20px 80px; max-width: 960px;">
+    <div id="flightDetailContainer">
+      <div style="text-align: center; padding: 60px; color: var(--text-muted);">
+        Đang nạp chi tiết chuyến bay từ SQLite...
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Vietjet Travel. Nền tảng du lịch trực tuyến. Nền trắng sáng & Màu chủ đạo đỏ #ee1d23.</div>
+        <div>Cơ sở dữ liệu: SQLite WebAssembly (sql.js)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SQLite WebAssembly CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <!-- App Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/flight-detail.js"></script>
+</body>
+</html>
